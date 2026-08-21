@@ -6,6 +6,7 @@ An end-to-end Machine Learning and Business Intelligence framework built using P
 
 ## 📌 Project Architecture & Workflow
 
+```text
 Raw Transaction Logs
        │
        ▼
@@ -28,23 +29,25 @@ Raw Transaction Logs
                        │
                        ▼
 [ Step 8: Automated CRM Retention Engine ]
+```
 
 ---
 
 ## 🚀 Key Features & Highlights
 
-* Data Engineering & Warehousing: Structured raw retail records into a clean SQL Star Schema (fact_orders, dim_customer, dim_product) with robust SQL-level quality checks.
-* Non-Overlapping Windowing: Designed observation (X) and holdout (y) windows to eliminate data leakage in predictive features.
-* RFM Customer Segmentation: Classified customer personas (Champions, At Risk, Hibernating, etc.) using quantile-based scoring (qcut).
-* Two-Stage Hurdle Model for CLV:
-  * Stage 1: Binary Classification for Churn / Repeat Purchase Probability P(Active).
-  * Stage 2: Log-Transformed Machine Learning Regression to estimate conditional holdout spend.
-* Automated Strategy Allocation Engine: Mapped predicted risk and CLV directly to tailored marketing campaigns (e.g., VIP Loyalty vs. High-Value Win-Back) to minimize ad waste.
+* **Data Engineering & Warehousing**: Structured raw retail records into a clean SQL Star Schema (`fact_orders`, `dim_customer`, `dim_product`) with robust SQL-level quality checks.
+* **Non-Overlapping Windowing**: Designed observation (X) and holdout (y) windows to eliminate data leakage in predictive features.
+* **RFM Customer Segmentation**: Classified customer personas (Champions, At Risk, Hibernating, etc.) using quantile-based scoring (`qcut`).
+* **Two-Stage Hurdle Model for CLV**:
+  * **Stage 1**: Binary Classification for Churn / Repeat Purchase Probability P(Active).
+  * **Stage 2**: Log-Transformed Machine Learning Regression to estimate conditional holdout spend.
+* **Automated Strategy Allocation Engine**: Mapped predicted risk and CLV directly to tailored marketing campaigns (e.g., VIP Loyalty vs. High-Value Win-Back) to minimize ad waste.
 
 ---
 
 ## 📁 Repository Structure
 
+```text
 .
 ├── 01_data_warehouse_setup.py          # SQL Data Warehouse & Star Schema creation
 ├── 02_cohort_retention_analysis.py    # SQL CTE-based Cohort Retention Analysis
@@ -65,6 +68,7 @@ Raw Transaction Logs
 │   └── model_evaluation_metrics.png
 │
 └── .gitignore                          # Excludes heavy SQLite files (>100MB)
+```
 
 ---
 
@@ -72,33 +76,38 @@ Raw Transaction Logs
 
 | Customer Persona | Predicted Risk / Value | Automated Recommended Strategy |
 | :--- | :--- | :--- |
-| Champions | High CLV, Low Risk | VIP Loyalty Program (No discounts, early product access) |
-| Promising / Potential | Medium CLV, Low Risk | Cross-Sell / Upsell Drive based on historical basket data |
-| At Risk (CLV > $500) | High CLV, High Risk | Urgent High-Value Win-Back (Personalized high-value offers) |
-| About to Sleep / Lost | Low CLV, High Risk | Campaign Suppression (Preserves marketing/ad budget) |
+| **Champions** | High CLV, Low Risk | VIP Loyalty Program (No discounts, early product access) |
+| **Promising / Potential** | Medium CLV, Low Risk | Cross-Sell / Upsell Drive based on historical basket data |
+| **At Risk (CLV > $500)** | High CLV, High Risk | Urgent High-Value Win-Back (Personalized high-value offers) |
+| **About to Sleep / Lost** | Low CLV, High Risk | Campaign Suppression (Preserves marketing/ad budget) |
 
 ---
 
 ## 🛠️ Tech Stack & Dependencies
 
-* Language: Python 3.10+
-* Database & Querying: SQLite3, SQL CTEs, Window Functions
-* Data Processing: pandas, numpy
-* Machine Learning & Modeling: scikit-learn, joblib
-* Visualization: matplotlib, seaborn
+* **Language**: Python 3.10+
+* **Database & Querying**: SQLite3, SQL CTEs, Window Functions
+* **Data Processing**: `pandas`, `numpy`
+* **Machine Learning & Modeling**: `scikit-learn`, `joblib`
+* **Visualization**: `matplotlib`, `seaborn`
 
 ---
 
 ## ⚡ How to Run
 
-1. Clone the repository:
+1. **Clone the repository**:
+   ```bash
    git clone https://github.com/KFI-117/Customer-CLV-prediction.git
    cd Customer-CLV-prediction
+   ```
 
-2. Install dependencies:
+2. **Install dependencies**:
+   ```bash
    pip install pandas numpy scikit-learn matplotlib seaborn joblib
+   ```
 
-3. Execute scripts sequentially:
+3. **Execute scripts sequentially**:
+   ```bash
    python 01_data_warehouse_setup.py
    python 02_cohort_retention_analysis.py
    python 03_rfm_feature_engineering.py
@@ -106,3 +115,4 @@ Raw Transaction Logs
    python 06_churn_prediction_model.py
    python 07_clv_regression_model.py
    python 08_business_campaign_generator.py
+   ```
