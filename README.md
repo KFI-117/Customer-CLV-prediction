@@ -5,6 +5,7 @@ An end-to-end Machine Learning and Business Intelligence framework built using *
 ---
 
 ## 📌 Project Architecture & Workflow
+
 Raw Transaction Logs
 │
 ▼
@@ -42,6 +43,8 @@ Raw Transaction Logs
 ---
 
 ## 📁 Repository Structure
+
+``` text
 .
 ├── 01_data_warehouse_setup.py          # SQL Data Warehouse & Star Schema creation
 ├── 02_cohort_retention_analysis.py    # SQL CTE-based Cohort Retention Analysis
