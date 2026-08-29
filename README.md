@@ -85,9 +85,9 @@ Raw Transaction Logs
 │   ├── crm_automation_sync
 │   └── crm_automation_sync
 │
-│
-│
-└── .gitignore                                        # Excludes heavy SQLite files (>100MB)
+├── .gitignore                                        # Excludes heavy SQLite files (>100MB)
+├── online_retail.db
+└── README.md
 ```
 
 ---
