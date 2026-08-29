@@ -48,26 +48,46 @@ Raw Transaction Logs
 ## 📁 Repository Structure
 
 ```text
-.
-├── 01_data_warehouse_setup.py          # SQL Data Warehouse & Star Schema creation
-├── 02_cohort_retention_analysis.py    # SQL CTE-based Cohort Retention Analysis
-├── 03_rfm_feature_engineering.py      # Cutoff feature engineering & leak prevention
-├── 04_customer_segmentation.py         # Quantile-based RFM Persona modeling
-├── 06_churn_prediction_model.py        # Supervised Classification for Churn
-├── 07_clv_regression_model.py          # Log-Transformed Regression & Hurdle CLV
-├── 08_business_campaign_generator.py   # CRM Strategy Mapping & CSV Exporter
-│
-├── models/                             # Saved ML Pipelines (.joblib)
+├── data/
+│   └── online_retail_II.xlsx                         # Raw online retail data
+|
+├── docs/
+│   ├── Customer Lifetime Value Report.docx           # Technical report source document (DOCX)
+│   └── Customer Lifetime Value Report.pdf            # Comprehensive technical analytical report (PDF)
+|
+├── models/                                           # Saved ML Pipelines (.joblib)
 │   ├── churn_pipeline_best.joblib
 │   └── clv_pipeline_best.joblib
-│
-├── outputs/                            # Visual plots & exported CRM targeting lists
+|
+├── outputs/                                          # Visual plots & exported CRM targeting lists
 │   ├── crm_campaign_lists/
 │   │   └── URGENT_high_value_winback_list.csv
+│   ├── churn_rate_by_persona.png
 │   ├── clv_evaluation_plots.png
-│   └── model_evaluation_metrics.png
+│   ├── cohort_retention_heatmap.png
+│   ├── customer_clv_predictions.csv
+│   ├── master_customer_marketing_dataset.csv
+│   ├── master_ml_dataset.csv
+│   ├── model_evaluation_metrics.png
+│   ├── persona_distribution.png
+│   ├── rfm_distribution.png
+│   ├── rfm_features.csv
+│   └── rfm_segmented_customers.csv
+|
+├── src
+│   ├── 01_data_warehouse_setup.py                    # SQL Data Warehouse & Star Schema creation
+│   ├── 02_cohort_retention_analysis.py               # SQL CTE-based Cohort Retention Analysis
+│   ├── 03_rfm_feature_engineering.py                 # Cutoff feature engineering & leak prevention
+│   ├── 04_customer_segmentation.py                   # Quantile-based RFM Persona modeling
+│   ├── 06_churn_prediction_model.py                  # Supervised Classification for Churn
+│   ├── 07_clv_regression_model.py                    # Log-Transformed Regression & Hurdle CLV
+│   ├── 08_business_campaign_generator.py             # CRM Strategy Mapping & CSV Exporter
+│   ├── crm_automation_sync
+│   └── crm_automation_sync
 │
-└── .gitignore                          # Excludes heavy SQLite files (>100MB)
+│
+│
+└── .gitignore                                        # Excludes heavy SQLite files (>100MB)
 ```
 
 ---
