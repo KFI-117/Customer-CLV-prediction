@@ -1,6 +1,6 @@
 # 🛒 End-to-End E-Commerce Customer Analytics & Lifetime Value Prediction System
 
-An end-to-end Machine Learning and Business Intelligence framework built using Python and SQL. This system ingests raw transaction logs, models customer retention behavior, and predicts 90-Day Expected Customer Lifetime Value (CLV) to generate automated CRM retention strategies.
+This repository contains a production-grade, end-to-end machine learning architecture designed for non-contractual e-commerce environments. Utilizing transactional retail data, the system integrates SQL star-schema data warehousing, heuristic RFM persona mapping, and a two-stage predictive pipeline (Stage 1: Logistic Regression Churn Classification, AUC = 0.806; Stage 2: Gradient Boosting Spend Regression, $R^2$ = 0.491) to forecast 90-day Expected Customer Lifetime Value (CLV) and automate value-tiered CRM marketing campaigns.
 
 ---
 
